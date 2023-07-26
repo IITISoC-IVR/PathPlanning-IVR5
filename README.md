@@ -4,12 +4,16 @@ The first part is to generate optimised trajectories which then has to be follow
 
 ![SilverStone_Short](https://github.com/rakshitjangid22/PathPlanning-IVR5/assets/116636404/bb939786-57ec-4644-b986-eda212466598)
 ![Austin_Short](https://github.com/rakshitjangid22/PathPlanning-IVR5/assets/116636404/69873362-7702-4755-9321-8d744f9ccc04)
+
 Another approach is the Min Curvature method which minimizes the curvature of the path in each segment of the Race track and results in higher speeds. The results for the same are shown in the figure below:
 ![SilverStone_min](https://github.com/rakshitjangid22/PathPlanning-IVR5/assets/116636404/c18c8c56-b646-463b-9d1c-7881cb5a1a7d)
 ![Austin_min](https://github.com/rakshitjangid22/PathPlanning-IVR5/assets/116636404/2b04dd4b-9b12-4a1e-bb12-21306e9ad696)
+
 Now, The Optimal Trajectory is the combination of both the above approaches since Shortest Path contributes to least travelled distance and Mininmum Curvature contributes to higher speeds. Hence we create a new optimisation function which is the combination of both the approaches: O<sup>2</sup> = (1- &epsilon;)S<sup>2</sup> + &epsilon;C<sup>2</sup>
+
 ![SilverStone_final](https://github.com/rakshitjangid22/PathPlanning-IVR5/assets/116636404/143f7b24-0923-4971-8098-9186da79ff06)
 ![Austin_final](https://github.com/rakshitjangid22/PathPlanning-IVR5/assets/116636404/bf13594c-1b7b-4a69-986a-886287bff94a)
+
 The we made a Vehicle-Driver model in Simulink, which takes into account all the forces and Vehicle Dynamics Equations and comprises a Lateral Control- Pure Pursuit Controller(our original code is not working in the Simulink file and hence we have replaced this code with a much simpler code and the original one is attached in the repo by the name- PurePursuitOwn) and a Longitudinal Control. 
 We aim to fix the errors in the Simulink File and make this model work.
 
